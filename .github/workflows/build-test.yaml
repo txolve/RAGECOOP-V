@@ -12,7 +12,8 @@ on:
   pull_request:
     branches: [ "main", "dev-nightly" ]
   
-  workflow_dispatch
+  workflow_dispatch:
+
 
 
 jobs:
