@@ -29,17 +29,17 @@ jobs:
       run: dotnet publish RageCoop.Server/RageCoop.Server.csproj --self-contained -p:PublishSingleFile=true -p:PublishTrimmed=false -r win-x64 -o bin/Release/Server/win-x64 -c Release
     - name: Build server linux-x64
       run: dotnet publish RageCoop.Server/RageCoop.Server.csproj --self-contained -p:PublishSingleFile=true -p:PublishTrimmed=false -r linux-x64 -o bin/Release/Server/linux-x64 -c Release
-    - uses: vimtor/action-zip@v1
+    - uses: vimtor/action-zip@v1.2
       with:
         files: bin/Release/Client
         dest: RageCoop.Client.zip
 
-    - uses: vimtor/action-zip@v1
+    - uses: vimtor/action-zip@v1.2
       with:
         files: bin/Release/Server/win-x64
         dest: RageCoop.Server-win-x64.zip
 
-    - uses: vimtor/action-zip@v1
+    - uses: vimtor/action-zip@v1.2
       with:
         files: bin/Release/Server/linux-x64
         dest: RageCoop.Server-linux-x64.zip
@@ -48,8 +48,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by github actions
       with:
-        upload_url: https://uploads.github.com/repos/RAGECOOP/RAGECOOP-V/releases/70603992/assets{?name,label} 
-        release_id: 70603992 
+        upload_url: https://uploads.github.com/repos/txolve/RAGECOOP-V/releases/273996979/assets{?name,label} 
+        release_id: 273996979
         asset_path: RageCoop.Client.zip
         asset_name: RageCoop.Client.zip
         asset_content_type: application/zip
@@ -59,8 +59,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by github actions
       with:
-        upload_url: https://uploads.github.com/repos/RAGECOOP/RAGECOOP-V/releases/70603992/assets{?name,label} 
-        release_id: 70603992 
+        upload_url: https://uploads.github.com/repos/txolve/RAGECOOP-V/releases/273996979/assets{?name,label}
+        release_id: 273996979
         asset_path: RageCoop.Server-win-x64.zip
         asset_name: RageCoop.Server-win-x64.zip
         asset_content_type: application/zip
@@ -70,8 +70,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # automatically provided by github actions
       with:
-        upload_url: https://uploads.github.com/repos/RAGECOOP/RAGECOOP-V/releases/70603992/assets{?name,label} 
-        release_id: 70603992 
+        upload_url: https://uploads.github.com/repos/txolve/RAGECOOP-V/releases/273996979/assets{?name,label}
+        release_id: 273996979
         asset_path: RageCoop.Server-linux-x64.zip
         asset_name: RageCoop.Server-linux-x64.zip
         asset_content_type: application/zip
